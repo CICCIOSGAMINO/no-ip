@@ -6,12 +6,12 @@ Crontabs allows you to specify a schedule to run the script and it will also run
 
 Here’s how to run the script as root.
 
-1.Create a folder in etc.
+_1. Create a folder in etc.
 
     sudo mkdir /etc/no-ip
     
-2.) Create a config file.
+_2. Create a config file.
 
     sudo touch /etc/no-ip/no-ip.conf
     
-3.) Set the parameters with your favorite editor. I use nano. See the Config File section above for details.
+_3. Set the parameters with your favorite editor. I use nano. See the Config File section above for details.
