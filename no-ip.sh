@@ -80,7 +80,7 @@ then
 		esac
 	done < "$CONFIG"
 else
-	echo "Config file not found."
+	echo "Config file not found in /etc/no-ip/no-ip.conf"
 	exit 10
 fi
 
@@ -89,20 +89,20 @@ echo "$USER"
 
 if [ -z "$USER" ]
 then
-	echo "No user was set. Use -u=username"
+	echo "No user set -> -u=username"
 	exit 10
 fi
 
 if [ -z "$PASSWORD" ]
 then
-	echo "No password was set. Use -p=password"
+	echo "No password set -> -p=password"
 	exit 20
 fi
 
 
 if [ -z "$HOSTNAME" ]
 then
-	echo "No host name. Use -h=host.example.com"
+	echo "No host set -> -h=host.example.com"
 	exit 30
 fi
 
@@ -126,7 +126,7 @@ then
 fi
 
 
-USERAGENT="--user-agent=\"no-ip shell script/1.0 mail@mail.com\""
+USERAGENT="--user-agent=\"no-ip shell script/1.3 marco.canali@gmail.com\""
 BASE64AUTH=$(echo '"$USER:$PASSWORD"' | base64)
 AUTHHEADER="--header=\"Authorization: $BASE64AUTH\""
 NOIPURL="https://$USER:$PASSWORD@dynupdate.no-ip.com/nic/update"
